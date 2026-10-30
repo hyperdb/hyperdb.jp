@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+U:wght@100..900&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, "BIZ UDPGothic", sans-serif;
+    font-size: 14.5px;
+}
+
+p {
+    code {
+        font-family: "Roboto Mono", "M PLUS U", monospace;
+        padding: 0 4px;
+        margin: 0 4px;
+    }
+}

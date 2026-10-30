@@ -1,0 +1,109 @@
+.content-body h1,
+.content-body h2,
+.content-body h3,
+.content-body h4 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.content-body h1 {
+    font-size: 1.75em;
+}
+
+.content-body h2 {
+    font-size: 1.5em;
+}
+
+.content-body h3 {
+    font-size: 1.25em;
+}
+
+.content-body p,
+.content-body ul,
+.content-body ol,
+.content-body pre,
+.content-body blockquote {
+    margin-bottom: 1em;
+}
+
+.content-body ul,
+.content-body ol {
+    padding-left: 1.5em;
+}
+
+.content-body ul {
+    list-style: disc;
+}
+
+.content-body ol {
+    list-style: decimal;
+}
+
+.content-body a {
+    text-decoration: underline;
+}
+
+.content-body pre {
+    overflow-x: auto;
+    padding: 1em;
+    border-radius: 0.5em;
+    background: var(--chakra-colors-bg-muted);
+}
+
+.content-body code {
+    font-family: "Roboto Mono", "M PLUS U", monospace;
+}
+
+.content-body :not(pre)>code {
+    padding: 0.15em 0.35em;
+    border-radius: 0.25em;
+    background: var(--chakra-colors-bg-muted);
+}
+
+.content-body blockquote {
+    padding-left: 1em;
+    border-left: 4px solid var(--chakra-colors-border);
+    color: var(--chakra-colors-fg-muted);
+}
+
+.content-body img {
+    max-width: 100%;
+}
+
+.content-body table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+
+.content-body th,
+.content-body td {
+    border: 1px solid var(--chakra-colors-border);
+    padding: 0.5em 0.75em;
+    text-align: left;
+}
+
+.content-body th {
+    font-weight: bold;
+}
+
+.content-body .contains-task-list,
+.content-body .task-list-item {
+    list-style: none;
+}
+
+.content-body .contains-task-list {
+    padding-left: 0;
+}
+
+.content-body .task-list-item input {
+    margin-right: 0.5em;
+}
+
+.content-body .mermaid-diagram svg {
+    max-width: 100%;
+    height: auto;
+}
