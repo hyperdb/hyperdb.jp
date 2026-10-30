@@ -8,6 +8,4 @@
 - React 19
 - Chakra UI 3
 - APIサイト
-  - コンテンツ関連
-    - `https://writers.hyperdb.cloud`
-    - API Doc: `/documents/api/writers_api.json`
+  - コンテンツ関連 `writers`（独自APIサイト）
