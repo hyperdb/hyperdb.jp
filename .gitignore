@@ -26,6 +26,6 @@ dist-ssr
 #
 # ------------------------------
 .vscode/*
-documents/api/commons_api.json
-documents/api/writers_api.json
+documents/api/*
 .note
+.env
