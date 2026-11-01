@@ -9,3 +9,11 @@
 - Chakra UI 3
 - APIサイト
   - コンテンツ関連 `writers`（独自APIサイト）
+
+## Google Analytics
+
+GA4の測定IDを`.env`に設定すると、ページ表示とSPA内のページ遷移を計測します。
+
+```env
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
