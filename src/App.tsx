@@ -7,10 +7,13 @@ import Contact from "@/pages/Contact";
 import Policy from "@/pages/Policy";
 import Profile from "@/pages/Profile";
 import Home from "@/pages/Home";
+import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
 import { Route, Switch } from "wouter";
 import "./App.css";
 
 function App() {
+    useGoogleAnalytics();
+
     return (
         <Switch>
             <Route path="/profile" component={Profile} />
