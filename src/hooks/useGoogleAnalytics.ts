@@ -22,8 +22,10 @@ export default function useGoogleAnalytics() {
         if (!measurementId || isConfigured) return;
 
         window.dataLayer = window.dataLayer || [];
-        window.gtag = (...args: unknown[]) => {
-            window.dataLayer?.push(args);
+        // gtag.js は配列ではなく Arguments オブジェクトのみ処理するため arguments を積む
+        window.gtag = function () {
+            // eslint-disable-next-line prefer-rest-params
+            window.dataLayer?.push(arguments);
         };
         window.gtag("js", new Date());
         window.gtag("config", measurementId, { send_page_view: false });
