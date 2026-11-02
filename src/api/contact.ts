@@ -22,7 +22,7 @@ export const sendContact = async (
         }),
         signal,
     });
-    if (response.status !== 200) {
+    if (response.status !== 201) {
         throw new Error(`Contact API responded with ${response.status}`);
     }
 };
