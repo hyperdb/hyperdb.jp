@@ -4,6 +4,10 @@ export const SITE_INFO = {
     title: "hyperdb.jp",
     url: "https://hyperdb.jp",
     key: "7cyGJ2yi",
+    description: "hyperdb.jp のブログサイトです。",
+    image: "https://hyperdb.jp/ogp.png",
+    locale: "ja_JP",
+    twitterCard: "summary_large_image",
 };
 
 export const PAGE_TYPE = {
