@@ -37,7 +37,6 @@ const ContactForm = () => {
     const [values, setValues] = useState<Values>(EMPTY);
     const [errors, setErrors] = useState<Errors>({});
     const [isSending, setIsSending] = useState(false);
-    const [status, setStatus] = useState<"idle" | "sent" | "failed">("idle");
 
     const change =
         (field: keyof Values) => (event: { target: { value: string } }) =>
@@ -45,7 +44,6 @@ const ContactForm = () => {
 
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
-        setStatus("idle");
 
         const cleaned: Values = {
             name: sanitizeText(values.name).trim(),
@@ -64,11 +62,11 @@ const ContactForm = () => {
         setIsSending(true);
         try {
             await sendContact(cleaned);
-            setStatus("sent");
             setValues(EMPTY);
+            alert("送信しました。");
         } catch (error: unknown) {
             console.error("コンタクトを送信できませんでした。", error);
-            setStatus("failed");
+            alert("送信できませんでした。");
         } finally {
             setIsSending(false);
         }
@@ -134,8 +132,6 @@ const ContactForm = () => {
                 <Button type="submit" loading={isSending} alignSelf="flex-start">
                     送信
                 </Button>
-                {status === "sent" && <p role="status">送信しました</p>}
-                {status === "failed" && <p role="alert">送信できませんでした</p>}
             </Stack>
         </form>
     );

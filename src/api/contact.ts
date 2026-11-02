@@ -5,10 +5,24 @@ export interface ContactInput {
     body: string;
 }
 
-// contact.hyperdb.cloud のAPI仕様が未確定のため、送信処理は未実装
+const CONTACT_API_URL = "https://contacts.hyperdb.cloud/api/v1/contacts";
+
 export const sendContact = async (
-    _input: ContactInput,
-    _signal?: AbortSignal,
+    input: ContactInput,
+    signal?: AbortSignal,
 ): Promise<void> => {
-    throw new Error("Contact API is not implemented");
+    const response = await fetch(CONTACT_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: input.name,
+            mail: input.email,
+            ...(input.subject ? { title: input.subject } : {}),
+            content: input.body,
+        }),
+        signal,
+    });
+    if (response.status !== 200) {
+        throw new Error(`Contact API responded with ${response.status}`);
+    }
 };
