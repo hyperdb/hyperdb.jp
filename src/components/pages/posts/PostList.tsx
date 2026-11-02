@@ -17,7 +17,7 @@ interface Props {
     filter?: PostFilter;
 }
 
-const PostList = ({ title = "ブログ記事一覧", filter }: Props) => {
+const PostList = ({ title = "ブログ一覧", filter }: Props) => {
     const category = filter?.category;
     const tag = filter?.tag;
     const [posts, setPosts] = useState<Content[]>([]);
@@ -77,12 +77,16 @@ const PostList = ({ title = "ブログ記事一覧", filter }: Props) => {
             )}
             {!hasError &&
                 posts.map((post) => (
-                    <PostListItem key={post.key} item={post} listPage={page + 1} />
+                    <PostListItem
+                        key={post.key}
+                        item={post}
+                        listPage={page + 1}
+                    />
                 ))}
             {!isLoading && !hasError && totalCount > POSTS_PER_PAGE && (
                 <Center mt={"1.5em"}>
                     <Pagination.Root
-                        aria-label="ブログ記事一覧のページネーション"
+                        aria-label="ブログ一覧のページネーション"
                         count={totalCount}
                         pageSize={POSTS_PER_PAGE}
                         page={page + 1}

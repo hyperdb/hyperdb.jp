@@ -28,7 +28,7 @@ export const MENU_ITEMS: MenuItem[] = [
         path: "/",
     },
     {
-        title: "ブログ投稿一覧",
+        title: "ブログ一覧",
         path: "/blog",
     },
     {
@@ -40,7 +40,7 @@ export const MENU_ITEMS: MenuItem[] = [
         path: "/policy",
     },
     {
-        title: "コンタクト",
+        title: "お問い合わせ",
         path: "/contact",
     },
 ];
