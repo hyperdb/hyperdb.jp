@@ -1,5 +1,5 @@
 import ContentView from "@/components/pages/contents/ContentView";
-import DefaultLayout from "@/layouts/DefaultLayout";
+import BlogLayout from "@/layouts/BlogLayout";
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { Link, useParams, useSearchParams } from "wouter";
 
@@ -14,12 +14,12 @@ const BlogDetail = () => {
             : "/blog";
 
     return (
-        <DefaultLayout>
-            <ContentView contentKey={id} />
+        <BlogLayout>
+            <ContentView contentKey={id} withMeta />
             <ChakraLink asChild mt={10} display="inline-block">
                 <Link href={backHref}>← ブログ記事一覧に戻る</Link>
             </ChakraLink>
-        </DefaultLayout>
+        </BlogLayout>
     );
 };
 export default BlogDetail;

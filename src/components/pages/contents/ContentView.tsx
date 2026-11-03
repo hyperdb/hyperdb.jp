@@ -2,6 +2,7 @@ import { getCategory, getContent } from "@/api/contents";
 import ContentBody from "@/components/pages/contents/ContentBody";
 import ContentFooter from "@/components/pages/contents/ContentFooter";
 import ContentTitle from "@/components/pages/contents/ContentTitle";
+import Meta from "@/components/pages/Meta";
 import type { Content, ContentCategory } from "@/types/Content";
 import { useEffect, useState } from "react";
 
@@ -9,6 +10,8 @@ interface Props {
     contentKey: string;
     showCategory?: boolean;
     showTags?: boolean;
+    /** true の場合、記事タイトルを使った META 情報を出力する */
+    withMeta?: boolean;
 }
 
 /** 記事の表示部分（タイトル・本文・フッター）。固定ページ等でも利用する */
@@ -16,6 +19,7 @@ const ContentView = ({
     contentKey,
     showCategory = true,
     showTags = true,
+    withMeta = false,
 }: Props) => {
     const [content, setContent] = useState<Content | null>(null);
     const [category, setCategory] = useState<ContentCategory | null>(null);
@@ -72,15 +76,25 @@ const ContentView = ({
     }, [contentKey, showCategory]);
 
     if (isLoading) {
-        return <p>記事を読み込んでいます...</p>;
+        return (
+            <>
+                {withMeta && <Meta />}
+                <p>記事を読み込んでいます...</p>
+            </>
+        );
     }
     if (hasError || !content) {
-        return <p role="alert">記事が取得できませんでした</p>;
+        return (
+            <>
+                {withMeta && <Meta noindex />}
+                <p role="alert">記事が取得できませんでした</p>
+            </>
+        );
     }
 
     return (
         <article>
-            <ContentTitle content={content} category={category} />
+            {withMeta && <Meta title={content.title}             type="article" />}            <ContentTitle content={content} category={category} />
             <ContentBody body={content.body} />
             <ContentFooter content={content} showTags={showTags} />
         </article>
