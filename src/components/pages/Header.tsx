@@ -6,14 +6,14 @@ import { Link } from "wouter";
 
 const Header = () => {
     return (
-        <Box as="header" borderBottomWidth="1px">
+        <Box as="header" borderBottomWidth="1px" bg={"accent.8"}>
             <Container fluid>
                 <Flex justify="space-between" align="center" minH="5em">
                     <HStack gap="2">
                         <SideDrawer />
                     </HStack>
                     <Link href={"/"}>
-                        <Text textStyle={"md"} fontWeight="bold">
+                        <Text textStyle={"md"} fontWeight="bold" color={"complement.9"}>
                             {SITE_INFO.title}
                         </Text>
                     </Link>

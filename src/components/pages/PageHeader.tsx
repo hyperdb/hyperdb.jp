@@ -19,7 +19,7 @@ const PageHeader = ({ title, description, actions }: Props) => {
             mr={"0.5em"}
         >
             <Stack gap="1" align={"flex-end"}>
-                <Heading as="h1" size="3xl">
+                <Heading as="h1" size="3xl" color={"accent.9"}>
                     {title}
                 </Heading>
                 {description && (
