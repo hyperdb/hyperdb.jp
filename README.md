@@ -31,3 +31,12 @@ VITE_THEME_COMPLEMENT=orange  # 補色系 (orange)
 
 - Chakra UIでは`colorPalette="accent"` / `"complement"` / `"gray"`で参照します（既定は`accent`）。
 - `accent.1`〜`accent.12`のようにRadixの12段階を直接指定することもできます。
+
+## コードハイライト
+
+コンテンツ内のコードブロックは[highlight.js](https://highlightjs.org/examples)のテーマでハイライトされ、ライト/ダークに応じて切り替わります。テーマ名（`node_modules/highlight.js/styles`のCSS名）を`.env`で指定できます。未設定の場合は括弧内の値になります。
+
+```env
+VITE_CODE_THEME_LIGHT=github       # ライトモード (github)
+VITE_CODE_THEME_DARK=github-dark   # ダークモード (github-dark)
+```
