@@ -1,7 +1,8 @@
 import MermaidDiagram from "@/components/pages/contents/MermaidDiagram";
 import { Box } from "@chakra-ui/react";
-import "highlight.js/styles/github.css";
+import { installCodeHighlightTheme } from "@/lib/codeHighlightTheme";
 import rehypeImageArea from "@/lib/rehypeImageArea";
+import { useEffect } from "react";
 import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
@@ -13,6 +14,9 @@ interface Props {
 }
 
 const ContentBody = ({ body }: Props) => {
+    useEffect(() => {
+        installCodeHighlightTheme();
+    }, []);
     return (
         <Box
             className="content-body"
