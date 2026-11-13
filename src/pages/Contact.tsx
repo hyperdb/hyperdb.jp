@@ -1,7 +1,6 @@
 import ContactForm from "@/components/pages/contact/ContactForm";
-import ContentEmbed from "@/components/pages/contents/ContentEmbed";
+import ContentView from "@/components/pages/contents/ContentView";
 import type { MetaProps } from "@/components/pages/Meta";
-import PageHeader from "@/components/pages/PageHeader";
 import DefaultLayout from "@/layouts/DefaultLayout";
 import { PAGE_KEYS } from "@/lib/constant";
 
@@ -13,11 +12,12 @@ const Contact = () => {
 
     return (
         <DefaultLayout meta={metaInfo}>
-            <PageHeader
-                title="お問い合わせ"
-                description="お問い合わせはこちらから"
+            <ContentView
+                contentKey={PAGE_KEYS.contact}
+                showCategory={false}
+                showTags={false}
+                showFooter={false}
             />
-            <ContentEmbed contentKey={PAGE_KEYS.contact} />
             <ContactForm />
         </DefaultLayout>
     );

@@ -6,7 +6,12 @@ const SideDrawer = () => {
     return (
         <Drawer.Root placement={"start"} size={"xs"}>
             <Drawer.Trigger asChild>
-                <Button variant="outline" size="sm">
+                <Button
+                    variant="outline"
+                    size="sm"
+                    color={"accent.12"}
+                    borderColor={"gray.11"}
+                >
                     <IoMenu />
                 </Button>
             </Drawer.Trigger>

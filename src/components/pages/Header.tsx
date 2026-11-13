@@ -6,19 +6,23 @@ import { Link } from "wouter";
 
 const Header = () => {
     return (
-        <Box as="header" borderBottomWidth="1px" bg={"accent.8"}>
+        <Box as="header" borderBottomWidth="1px" bg={"accent.10"}>
             <Container fluid>
                 <Flex justify="space-between" align="center" minH="5em">
                     <HStack gap="2">
                         <SideDrawer />
                     </HStack>
                     <Link href={"/"}>
-                        <Text textStyle={"md"} fontWeight="bold" color={"complement.9"}>
+                        <Text
+                            textStyle={"lg"}
+                            fontWeight="bold"
+                            color={"accent.12"}
+                        >
                             {SITE_INFO.title}
                         </Text>
                     </Link>
                     <HStack gap="2">
-                        <ColorModeButton />
+                        <ColorModeButton color={"accent.12"} />
                     </HStack>
                 </Flex>
             </Container>

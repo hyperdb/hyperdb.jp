@@ -85,7 +85,9 @@ const ContactForm = () => {
                         maxLength={LIMITS.name}
                         autoComplete="name"
                     />
-                    <Field.HelperText>{LIMITS.name}文字以内</Field.HelperText>
+                    <Field.HelperText color={"complement.11"}>
+                        {LIMITS.name}文字以内
+                    </Field.HelperText>
                     <Field.ErrorText>{errors.name}</Field.ErrorText>
                 </Field.Root>
 
@@ -109,7 +111,9 @@ const ContactForm = () => {
                         onChange={change("subject")}
                         maxLength={LIMITS.subject}
                     />
-                    <Field.HelperText>{LIMITS.subject}文字以内</Field.HelperText>
+                    <Field.HelperText color={"complement.11"}>
+                        {LIMITS.subject}文字以内
+                    </Field.HelperText>
                     <Field.ErrorText>{errors.subject}</Field.ErrorText>
                 </Field.Root>
 
@@ -123,13 +127,18 @@ const ContactForm = () => {
                         onChange={change("body")}
                         maxLength={LIMITS.body}
                     />
-                    <Field.HelperText>
+                    <Field.HelperText color={"complement.11"}>
                         {values.body.length} / {LIMITS.body}文字
                     </Field.HelperText>
                     <Field.ErrorText>{errors.body}</Field.ErrorText>
                 </Field.Root>
 
-                <Button type="submit" loading={isSending} alignSelf="flex-start">
+                <Button
+                    type="submit"
+                    loading={isSending}
+                    alignSelf="flex-start"
+                    w={"full"}
+                >
                     送信
                 </Button>
             </Stack>

@@ -10,6 +10,7 @@ interface Props {
     contentKey: string;
     showCategory?: boolean;
     showTags?: boolean;
+    showFooter?: boolean;
     /** true の場合、記事タイトルを使った META 情報を出力する */
     withMeta?: boolean;
 }
@@ -19,6 +20,7 @@ const ContentView = ({
     contentKey,
     showCategory = true,
     showTags = true,
+    showFooter = true,
     withMeta = false,
 }: Props) => {
     const [content, setContent] = useState<Content | null>(null);
@@ -94,9 +96,12 @@ const ContentView = ({
 
     return (
         <article>
-            {withMeta && <Meta title={content.title}             type="article" />}            <ContentTitle content={content} category={category} />
+            {withMeta && <Meta title={content.title} type="article" />}{" "}
+            <ContentTitle content={content} category={category} />
             <ContentBody body={content.body} />
-            <ContentFooter content={content} showTags={showTags} />
+            {showFooter && (
+                <ContentFooter content={content} showTags={showTags} />
+            )}
         </article>
     );
 };
