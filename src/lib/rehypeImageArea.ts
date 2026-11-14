@@ -17,7 +17,10 @@ const isImageOnlyParagraph = (node: RootContent): node is Element =>
 const collectImages = (p: Element): Element[] =>
     p.children.filter(
         (c): c is Element => c.type === "element" && c.tagName === "img",
-    );
+    ).map((image) => ({
+        ...image,
+        properties: { ...image.properties, className: ["image-area-image"] },
+    }));
 
 /** 連続する画像のみの段落を <div class="image-area"> にまとめる */
 const rehypeImageArea = () => (tree: Root) => {

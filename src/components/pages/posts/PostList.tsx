@@ -17,7 +17,7 @@ interface Props {
     filter?: PostFilter;
 }
 
-const PostList = ({ title = "ブログ一覧", filter }: Props) => {
+const PostList = ({ title = "記事一覧", filter }: Props) => {
     const category = filter?.category;
     const tag = filter?.tag;
     const [posts, setPosts] = useState<Content[]>([]);

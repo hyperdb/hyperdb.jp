@@ -98,7 +98,7 @@ const ContentView = ({
         <article>
             {withMeta && <Meta title={content.title} type="article" />}{" "}
             <ContentTitle content={content} category={category} />
-            <ContentBody body={content.body} />
+            <ContentBody body={content.body} enableImageZoom />
             {showFooter && (
                 <ContentFooter content={content} showTags={showTags} />
             )}

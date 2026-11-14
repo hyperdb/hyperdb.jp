@@ -11,7 +11,7 @@ const Home = () => {
 
     return (
         <DefaultLayout meta={metaInfo}>
-            <PageHeader title="ブログ一覧" />
+            <PageHeader title="ブログ投稿記事" />
             <PostList />
         </DefaultLayout>
     );

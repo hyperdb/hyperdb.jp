@@ -28,7 +28,7 @@ export const MENU_ITEMS: MenuItem[] = [
         path: "/",
     },
     {
-        title: "ブログ一覧",
+        title: "ブログ投稿記事",
         path: "/blog",
     },
     {
