@@ -1,8 +1,10 @@
 import { getCategory, getContent } from "@/api/contents";
+import CommentBlock from "@/components/pages/CommentBlock";
 import ContentBody from "@/components/pages/contents/ContentBody";
 import ContentFooter from "@/components/pages/contents/ContentFooter";
 import ContentTitle from "@/components/pages/contents/ContentTitle";
 import Meta from "@/components/pages/Meta";
+import { SITE_INFO } from "@/lib/constant";
 import type { Content, ContentCategory } from "@/types/Content";
 import { useEffect, useState } from "react";
 
@@ -11,6 +13,7 @@ interface Props {
     showCategory?: boolean;
     showTags?: boolean;
     showFooter?: boolean;
+    showComment?: boolean;
     /** true の場合、記事タイトルを使った META 情報を出力する */
     withMeta?: boolean;
 }
@@ -21,6 +24,7 @@ const ContentView = ({
     showCategory = true,
     showTags = true,
     showFooter = true,
+    showComment = false,
     withMeta = false,
 }: Props) => {
     const [content, setContent] = useState<Content | null>(null);
@@ -101,6 +105,13 @@ const ContentView = ({
             <ContentBody body={content.body} enableImageZoom />
             {showFooter && (
                 <ContentFooter content={content} showTags={showTags} />
+            )}
+            {showComment && (
+                <CommentBlock
+                    pageId={content.key}
+                    title={content.title}
+                    siteId={SITE_INFO.remark42_key}
+                />
             )}
         </article>
     );

@@ -4,6 +4,7 @@ export const SITE_INFO = {
     title: "hyperdb.jp",
     url: "https://hyperdb.jp",
     key: "7cyGJ2yi",
+    remark42_key: "hyperdb-jp",
     description: "hyperdb.jp のブログサイトです。",
     image: "https://hyperdb.jp/ogp.png",
     locale: "ja_JP",
