@@ -1,26 +1,27 @@
 import type { MenuItem } from "@/types/Menu";
+import settings from "./settings.json";
 
 export const SITE_INFO = {
-    title: "hyperdb.jp",
-    url: "https://hyperdb.jp",
-    key: "7cyGJ2yi",
-    remark42_key: "hyperdb-jp",
-    description: "hyperdb.jp のブログサイトです。",
-    image: "https://hyperdb.jp/ogp.png",
-    locale: "ja_JP",
-    twitterCard: "summary_large_image",
+    title: settings.site_info.title,
+    url: settings.site_info.url,
+    key: settings.site_info.key,
+    remark42_key: settings.site_info.remark42_key,
+    description: settings.site_info.description,
+    image: settings.site_info.image,
+    locale: settings.site_info.locale,
+    twitterCard: settings.site_info.twitterCard,
 };
 
 export const PAGE_TYPE = {
-    page: "9yPvLZg1",
-    post: "uy9iMBxO",
+    page: settings.page_type.page,
+    post: settings.page_type.post,
 };
 
 export const PAGE_KEYS = {
-    profile: "ocUuXKZj",
-    policy: "9RPvLZg1",
-    home: "cjO5UjHR",
-    contact: "wA3ruNA9",
+    profile: settings.page_keys.profile,
+    policy: settings.page_keys.policy,
+    home: settings.page_keys.home,
+    contact: settings.page_keys.contact,
 };
 
 export const MENU_ITEMS: MenuItem[] = [
