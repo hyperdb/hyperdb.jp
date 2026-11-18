@@ -85,6 +85,7 @@
     flex-wrap: wrap;
     gap: 0.75em;
     margin: 1em 0;
+    justify-content: center;
 }
 
 .content-body .image-area>img,
