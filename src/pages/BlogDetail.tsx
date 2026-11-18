@@ -15,7 +15,7 @@ const BlogDetail = () => {
 
     return (
         <BlogLayout>
-            <ContentView contentKey={id} withMeta showComment={true} />
+            <ContentView contentKey={id} withMeta />
             <ChakraLink asChild mt={10} display="inline-block">
                 <Link href={backHref}>← ブログ記事一覧に戻る</Link>
             </ChakraLink>
